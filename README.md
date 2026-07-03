@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Beltway Chimney Redesign
 
-## Getting Started
+A professional, high-performance, and modern web application redesign for **Beltway Chimney**, migrated from a legacy Wix website builder. Built using the latest Next.js (App Router), React, and TypeScript architecture with clean Vanilla CSS.
 
-First, run the development server:
+---
 
+## 🌟 Motto & Philosophy
+> **"Protecting People, Property, and Peace of Mind"**
+
+Beltway Chimney provides certified chimney sweeping, flue inspection, and creosote cleaning services across the Washington D.C., Maryland, and Northern Virginia Metropolitan area. This platform is designed to educate homeowners on fire safety, carbon monoxide prevention, and provide seamless online scheduling and billing tools.
+
+---
+
+## 🛠️ Technology Stack
+
+- **Framework**: [Next.js (App Router)](https://nextjs.org/) – React framework for server-side rendering, static optimization, and performance.
+- **Language**: [TypeScript](https://www.typescriptlang.org/) – Providing type safety and autocompletion interfaces.
+- **Styling**: [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) – Scoped layouts utilizing CSS variables and `styled-jsx` for fluid modular designs without heavy CSS frameworks.
+- **Icons**: [Lucide React](https://lucide.dev/) – A collection of clean, SVG-based stroke icons.
+
+---
+
+## ✨ Features & Architecture
+
+### 1. Interstate Shield Brand Redesign
+The brand colors and layouts are inspired by the company's Capital Beltway (I-495) name, styling a custom Interstate Shield logo inside navigation and footer panels:
+- **Navy Blue** (`#1b3a60`)
+- **Highway Red** (`#e61c24`)
+- **Slate Light** (`#f8fafc`)
+
+### 2. Interactive Booking Wizard (`/appointments`)
+An interactive scheduler allowing clients to book services. It guides users through:
+- **Service Selection**: Options with transparent pricing.
+- **Time Slot & Calendar Picker**: Custom calendar interface (blocking Sundays) with dynamic slot allocation.
+- **Service Location Details**: Gathers location and chimney details.
+- **Booking Reference Code**: Generates a receipt summary with unique reference keys (`BC-XXXXXX`).
+
+### 3. Payment Billing Portal (`/pay`)
+A billing gateway that supports:
+- Quick pay options for invoice reference codes.
+- **Click-to-Pay** express buttons mocking **Apple Pay** and **Google Pay** checks.
+- Traditional credit card input validations.
+- Custom state changes (processing spinner -> success receipt overlay).
+
+### 4. Interactive Testimonial Slider & Service Cards
+- Auto-cycling slider showing DMV customer reviews with star ratings.
+- Service detail overlays that open modal dialogs when clicked.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+1. Clone or download the repository files.
+2. Install the package dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development Server
+Run the local dev server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser to inspect the application.
+
+### Production Build
+Build the static and dynamic files for server deployment:
+```bash
+npm run build
+```
+Run the compiled build:
+```bash
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛡️ Verification & Type-Safety
+This project is configured with Strict TypeScript compiling and ESLint configs. It builds cleanly into static route modules on Vercel or any Node server.
