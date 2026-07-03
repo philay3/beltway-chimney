@@ -13,6 +13,24 @@ Beltway Chimney provides certified chimney sweeping, flue inspection, and creoso
 
 ## 🛠️ Technology Stack
 
+<p align="left">
+  <a href="https://nextjs.org/">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  </a>
+  <a href="https://react.dev/">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+  </a>
+  <a href="https://vercel.com/">
+    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+  </a>
+</p>
+
 - **Framework**: [Next.js (App Router)](https://nextjs.org/) – React framework for server-side rendering, static optimization, and performance.
 - **Language**: [TypeScript](https://www.typescriptlang.org/) – Providing type safety and autocompletion interfaces.
 - **Styling**: [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) – Scoped layouts utilizing CSS variables and `styled-jsx` for fluid modular designs without heavy CSS frameworks.
