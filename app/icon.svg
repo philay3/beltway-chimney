@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Shield Outer White Border -->
+  <path
+    d="M 50 6 Q 78 6 88 17 C 98 33 98 58 83 78 Q 68 93 50 98 Q 32 93 17 78 C 2 58 2 33 12 17 Q 22 6 50 6"
+    fill="none"
+    stroke="#ffffff"
+    strokeWidth="4"
+  />
+  <!-- Shield Blue Body -->
+  <path
+    d="M 50 8 Q 76 8 86 18 C 95 33 95 56 81 75 Q 67 89 50 94 Q 33 89 19 75 C 5 56 5 33 14 18 Q 24 8 50 8"
+    fill="#1b3a60"
+  />
+  <!-- Top Red Section -->
+  <path
+    d="M 50 8 Q 76 8 86 18 C 87.5 21 88.5 25 89 29.5 L 11 29.5 C 11.5 25 12.5 21 14 18 Q 24 8 50 8"
+    fill="#e61c24"
+  />
+  <!-- Black Road at the Bottom -->
+  <path
+    d="M 50 62 L 72 82 C 65.5 87.5 58 91.5 50 94 C 42 91.5 34.5 87.5 28 82 Z"
+    fill="#121214"
+    stroke="#ffffff"
+    strokeWidth="2"
+  />
+  <!-- Road Center Dotted Lines -->
+  <line x1="50" y1="67" x2="50" y2="73" stroke="#ffffff" strokeWidth="2.5" strokeDasharray="1 1" />
+  <line x1="50" y1="77" x2="50" y2="85" stroke="#ffffff" strokeWidth="2.5" strokeDasharray="1 1" />
+</svg>
