@@ -141,7 +141,7 @@ export default function Header() {
           background: rgba(18, 18, 20, 0.85);
           backdrop-filter: blur(12px);
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          height: 80px;
+          height: 190px;
           display: flex;
           align-items: center;
           color: #fdfbf7;
@@ -238,7 +238,7 @@ export default function Header() {
           animation: pulse 2s infinite ease-in-out;
         }
 
-        .nav-book-btn {
+        :global(.nav-book-btn) {
           padding: 10px 20px;
           font-size: 0.85rem;
         }
@@ -254,7 +254,7 @@ export default function Header() {
         /* Drawer */
         .mobile-drawer {
           position: absolute;
-          top: 80px;
+          top: 190px;
           left: 0;
           right: 0;
           background: #1e1e24;
@@ -294,12 +294,31 @@ export default function Header() {
         }
 
         @media (max-width: 768px) {
-          .desktop-nav, .nav-book-btn {
+          .desktop-nav, :global(.nav-book-btn) {
             display: none;
           }
           .mobile-toggle {
             display: block;
           }
+        }
+        @media (max-width: 480px) {
+          .logo-text   { font-size: 1.15rem; }
+          .nav-actions { gap: 10px; }
+
+          .phone-cta span { display: none; }          /* hide the number, keep the icon */
+          .phone-cta {
+            color: var(--primary);
+            gap: 0;
+            padding: 9px;
+            min-width: 42px;
+            min-height: 42px;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(230, 28, 36, 0.12);
+          }
+        }
+        @media (max-width: 360px) {
+          .phone-cta { display: none; }               /* ultra-narrow: drawer has the number */
         }
       `}</style>
     </header>

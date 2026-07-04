@@ -558,12 +558,16 @@ export default function PayOnline() {
         }
 
         @media (max-width: 600px) {
-          .pay-card, .success-receipt {
-            padding: 32px 20px;
-          }
-          .express-buttons {
-            grid-template-columns: 1fr;
-          }
+          .pay-card, .success-receipt { padding: 32px 20px; }
+          .express-buttons { grid-template-columns: 1fr; }
+          .form-row { grid-template-columns: 1fr; }   /* P1 — invoice/amount + expiry/CVV stack */
+        }
+
+        @media (max-width: 480px) {
+          .pay-page { padding: 56px 0; }
+          .form-group input { padding: 13px 15px; }
+          .receipt-actions { flex-direction: column; }   /* P7 — Print / Make Another stack */
+          .receipt-actions .btn { width: 100%; }
         }
       `}</style>
     </div>

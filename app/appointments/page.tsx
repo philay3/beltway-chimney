@@ -769,6 +769,34 @@ export default function Appointments() {
           .booking-form .form-row {
             grid-template-columns: 1fr;
           }
+          /* P5 — service option cards stack (name/duration over price/radio) */
+          .service-option-card { flex-direction: column; align-items: flex-start; gap: 14px; padding: 18px; }
+          .service-price-info  { width: 100%; justify-content: space-between; }
+        }
+
+        @media (max-width: 480px) {
+          /* P5 — progress steps shrink from fixed 100px to fit three-up */
+          .progress-bar-steps { max-width: 100%; }
+          .step-node          { width: auto; flex: 1; font-size: 0.7rem; gap: 6px; line-height: 1.2; }
+          .node-number        { width: 30px; height: 30px; font-size: 0.85rem; }
+          .progress-connector { margin-bottom: 22px; }
+
+          /* P5 — calendar + time cards reclaim room, cells stay ≈38px (tappable) */
+          .calendar-card, .time-slots-card { padding: 20px; }
+          .days-grid    { gap: 4px; }
+          .cal-day      { height: 38px; font-size: 0.9rem; }
+          .weekdays-row { font-size: 0.65rem; }
+
+          /* P7 — action rows stack full-width, primary on top */
+          .step-actions { flex-direction: column-reverse; gap: 12px; }
+          .step-actions .btn { width: 100%; }
+          .form-actions { flex-direction: column-reverse; }
+
+          /* P7 — success receipt rows stack so long service names / address don't overflow */
+          .success-card { padding: 36px 22px; }
+          .receipt-row  { flex-direction: column; gap: 2px; margin: 10px 0; }
+          .r-value      { text-align: left; }
+          .r-address    { max-width: 100%; }
         }
 
         .submit-booking {

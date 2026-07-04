@@ -120,10 +120,7 @@ export default function Testimonials() {
           margin-bottom: 12px;
         }
 
-        h2 {
-          font-size: 2.25rem;
-          color: var(--text-dark);
-        }
+        h2 { font-size: clamp(1.7rem, 5.4vw, 2.25rem); color: var(--text-dark); }
 
         .testimonial-slider-container {
           display: flex;
@@ -261,6 +258,11 @@ export default function Testimonials() {
           .slider-arrow {
             display: none;
           }
+        }
+
+        @media (max-width: 480px) {
+          .testimonial-card { min-height: 0; padding: 28px 20px; }
+          .quote-text { font-size: 1.02rem; }
         }
       `}</style>
     </section>

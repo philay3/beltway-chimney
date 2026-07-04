@@ -162,8 +162,8 @@ export default function Home() {
 
           <div className="grid grid-3 services-grid">
             {services.map((service) => (
-              <div 
-                key={service.id} 
+              <div
+                key={service.id}
                 className="card service-card"
                 onClick={() => setSelectedService(service)}
               >
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="glass contact-card">
             <h2>Have Questions? Get in Touch</h2>
             <p>Need a consultation or general price estimate? Send a message and our specialists will assist you.</p>
-            
+
             {contactSubmitted ? (
               <div className="success-toast animate-fade-in">
                 <CheckCircle2 size={24} />
@@ -259,6 +259,8 @@ export default function Home() {
         }
 
         .hero-img {
+          width: 100%;
+          height: 100%;
           object-fit: cover;
         }
 
@@ -294,12 +296,7 @@ export default function Home() {
           color: var(--primary) !important;
         }
 
-        h1 {
-          font-size: 3.5rem;
-          line-height: 1.1;
-          margin-bottom: 20px;
-          letter-spacing: -1px;
-        }
+        h1 { font-size: clamp(1.9rem, 6.2vw, 3.5rem); line-height: 1.1; margin-bottom: 20px; letter-spacing: -0.5px; }
 
         .hero-subtitle {
           font-size: 1.15rem;
@@ -317,9 +314,13 @@ export default function Home() {
         /* Welcome Section */
         .welcome-grid {
           display: grid;
-          grid-template-columns: 1.2fr 1fr;
+          grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
           gap: 60px;
           align-items: center;
+        }
+
+        .welcome-text {
+          min-width: 0;
         }
 
         .section-tag {
@@ -332,10 +333,7 @@ export default function Home() {
           display: block;
         }
 
-        h2 {
-          font-size: 2.5rem;
-          margin-bottom: 24px;
-        }
+        h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 24px; }
 
         p {
           line-height: 1.7;
@@ -381,16 +379,25 @@ export default function Home() {
 
         .welcome-image-container {
           position: relative;
+          width: 100%;
+          min-width: 0;
         }
 
         .image-wrapper {
           border-radius: var(--border-radius-lg);
           overflow: hidden;
           box-shadow: var(--box-shadow-lg);
+          width: 100%;
         }
 
-        .welcome-img {
+        /* Next.js <Image> renders its own <img>, which styled-jsx does NOT
+           tag with the scoped hash class — so a plain ".welcome-img" rule
+           never matches it. Anchor a :global() selector inside the scoped
+           wrapper to reach the img without leaking styles globally. */
+        .image-wrapper :global(.welcome-img) {
+          display: block;
           width: 100%;
+          max-width: 100%;
           height: auto;
           object-fit: cover;
         }
@@ -506,6 +513,9 @@ export default function Home() {
         }
 
         .form-input {
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
           background: rgba(255, 255, 255, 0.05);
           border: 1px solid rgba(255, 255, 255, 0.1);
           color: #fff;
@@ -514,6 +524,10 @@ export default function Home() {
           outline: none;
           transition: var(--transition);
           font-size: 0.95rem;
+        }
+
+        textarea.form-input {
+          resize: vertical;
         }
 
         .form-input::placeholder {
@@ -597,11 +611,11 @@ export default function Home() {
         /* Responsiveness */
         @media (max-width: 900px) {
           .welcome-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
             gap: 40px;
           }
           .welcome-image-container {
-            max-width: 500px;
+            max-width: 100%;
             margin: 0 auto;
           }
           .form-row {
@@ -610,12 +624,25 @@ export default function Home() {
         }
 
         @media (max-width: 768px) {
-          h1 {
-            font-size: 2.75rem;
-          }
           .contact-card {
             padding: 32px 20px;
           }
+        }
+
+        @media (max-width: 600px) {
+          .stat-overlay { left: 14px; right: auto; bottom: -16px; padding: 18px 20px; }
+          .stat-num { font-size: 1.65rem; }
+        }
+
+        @media (max-width: 480px) {
+          .hero { min-height: 78vh; padding: 56px 0; }
+          .badge { font-size: 0.72rem; padding: 7px 14px; letter-spacing: 0.3px; }
+          .hero-subtitle { font-size: 1.02rem; margin-bottom: 28px; }
+          .warning-card { padding: 18px 16px; gap: 12px; margin: 20px 0; }
+          .contact-card  { padding: 28px 18px; }
+          .modal-content { padding: 26px 20px; }
+          .modal-footer  { flex-direction: column; }
+          .modal-footer :global(.btn) { width: 100%; }
         }
       `}</style>
     </div>
